@@ -1,0 +1,58 @@
+.portfolio-block {
+  & {
+    padding: 40px 20px;
+    border-top: 4px solid #000;
+    background-image: url('../img/portfolio_bg.jpg');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  > .render {
+    & {
+      width: 23%;
+    }
+
+    > .image {
+      box-sizing: border-box;
+      border: 10px solid #fff;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      box-shadow: 5px 5px 20px #000;
+    }
+    > .text {
+      position: relative;
+      padding: 5px;
+      background-color: @info-block-bg-color;
+      text-align: justify;
+      border: 3px solid #545454;
+      z-index: 2;
+      box-shadow: 5px 5px 20px #000;
+    }
+  }
+  > .render.-two {
+    width: 46%;
+  }
+  > .render.-three {
+    width: 30%;
+  }
+  > .render.-splitDescription > .text {
+    left: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-block {
+    > .render,
+    .render.-two,
+    .render.-three {
+      width: 90%;
+    }
+    > .render.-splitDescription > .text {
+      left: auto;
+    }
+  }
+}
